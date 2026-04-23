@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StellarUI</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
   <body>
@@ -53,8 +53,8 @@
 
             <input
               type="search"
-              name=""
-              id=""
+              name="search"
+              id="search"
               class="site-header__search-input"
               placeholder="Search missions, planets..."
             />
@@ -87,6 +87,92 @@
           &times;
         </button>
       </div>
+
+      <div class="mobile-sidebar__search">
+        <img
+          src="assets/icons/search-icon.svg"
+          alt=""
+          class="mobile-sidebar__search-icon"
+          aria-hidden="true"
+        />
+        <input
+          type="search"
+          id="mobile-search"
+          name="mobile-search"
+          class="mobile-sidebar__search-input"
+          placeholder="Search missions, planets..."
+        />
+      </div>
+
+      <nav class="mobile-sidebar__nav">
+        <ul class="mobile-sidebar__menu">
+          <li><a href="/" class="mobile-sidebar__link">Home</a></li>
+          <li><a href="/#mission" class="mobile-sidebar__link">Missions</a></li>
+          <li>
+            <a href="/#technology" class="mobile-sidebar__link">Technology</a>
+          </li>
+          <li><a href="/#explore" class="mobile-sidebar__link">Explore</a></li>
+          <li><a href="/#about" class="mobile-sidebar__link">About</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-sidebar__cta" type="button">Launch App</button>
     </aside>
+
+    <section class="hero">
+      <canvas id="startfield-canvas" class="hero__canvas"></canvas>
+
+      <div class="hero__gradient-overlay"></div>
+      <div class="hero__radial-overlay"></div>
+
+      <div class="hero-orb hero__orb--left"></div>
+      <div class="hero-orb hero__orb--right"></div>
+
+      <div class="site-wrapper">
+        <div class="hero__container">
+          <div class="hero__content">
+            <div class="hero__text">
+              <div class="hero__badge">
+                <span class="hero__badge-icon">★</span>
+                <span class="hero__badge-text"
+                  >Next Generation Space Technology</span
+                >
+              </div>
+
+              <h1 class="hero__title">
+                <span class="hero__title-line">Journey Beyond</span> <br />
+                <span class="hero__title-hightlight">Earth</span>
+              </h1>
+
+              <p class="hero__subtitle">
+                Dive into the next generation of space exploration, missions and
+                technology. Discover the universe like never before.
+              </p>
+
+              <div class="hero__actions">
+                <button class="hero__button hero__button--primary">
+                  Get Started <span class="hero__button--chevron">&#8658;</span>
+                </button>
+                <button class="hero__button hero__button--outline">
+                  Explore Missions
+                </button>
+              </div>
+            </div>
+
+            <div class="hero__visual">
+              <div class="hero__visual-frame">
+                <div class="hero__visual-glow"></div>
+                <img
+                  src="assets/images/astronaut.png"
+                  alt="Floating astronaut in space"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="starfield.js"></script>
   </body>
 </html>
