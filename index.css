@@ -1,1 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("hero.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cursor-default: url("assets/icons/cursor-default.png") 20 8 auto;
+  --cursor-pointer: url("assets/icons/cursor-pointer.png") 20 8 pointer;
+}
+
+html {
+  scrollbar-width: auto;
+  scrollbar-color: #5f6dff #0f1328;
+}
+
+html::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #0f1328;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: linear-gradient(180deg, #6d28d9 0%, #38bdf8 100%);
+  border-radius: 100px;
+  border: 2px solid #0f1328;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: linear-gradient(180deg, #7c3aed 0%, #67e8f9 100%);
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #050510;
+  color: #e5e7eb;
+  cursor: var(--cursor-default);
+}
+
+a,
+button,
+label,
+summary,
+select,
+input[type="button"],
+[role="button"] {
+  cursor: var(--cursor-default);
+}
+
+.site-wrapper {
+  width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.75rem;
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  padding-block: 1rem;
+  background: transparent;
+}
+
+.site-wrapper--header {
+}
