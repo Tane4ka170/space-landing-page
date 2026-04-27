@@ -71,4 +71,131 @@ input[type="button"],
 }
 
 .site-wrapper--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.site-brand__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px #ffe075e6) drop-shadow(0 0 10px #ffd13b8c);
+}
+
+.site-header__menu-toggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid #2f2f47;
+  border-radius: 0.8rem;
+  background-color: #11111ccc;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+  cursor: var(--cursor-pointer);
+}
+
+.site-header__menu-toggle-line {
+  width: 1.2rem;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 100px;
+}
+
+.site-header__nav,
+.site-header-actions {
+  display: none;
+}
+
+.site-header__menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.site-header__link {
+  color: #b3b9c9;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.site-header__link:hover {
+  color: #fff;
+}
+
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-header__search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 14rem;
+  padding: 0.6rem 1rem;
+  border-radius: 3rem;
+  border: 1px solid #22223b;
+  background-color: #181826;
+  box-shadow: inset 0 1px 0 #ffffff0d;
+  transform:
+    width 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease background-color 0.3s ease;
+}
+.site-header__search:focus-within {
+  border-color: #38bdf8;
+}
+.site-header__search-icon {
+}
+.site-header__search-input {
+}
+.site-header__cta {
+}
+.mobile-sidebar__overlay {
+}
+.mobile-sidebar {
+}
+.mobile-sidebar__top {
+}
+.mobile-sidebar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+.mobile-sidebar__close {
+}
+.mobile-sidebar__search {
+}
+.mobile-sidebar__search-icon {
+}
+.mobile-sidebar__search-input {
+}
+.mobile-sidebar__nav {
+}
+.mobile-sidebar__menu {
+}
+.mobile-sidebar__link {
+}
+.mobile-sidebar__cta {
 }
