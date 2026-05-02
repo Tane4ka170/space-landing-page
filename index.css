@@ -235,8 +235,14 @@ input[type="button"],
   transition: transform 0.3s ease;
   z-index: 50;
 }
+
 .mobile-sidebar__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
+
 .mobile-sidebar__brand {
   display: inline-flex;
   align-items: center;
@@ -245,7 +251,13 @@ input[type="button"],
   font-weight: 700;
   color: #fff;
 }
+
 .mobile-sidebar__close {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 0.7rem;
+  background-color: transparent;
 }
 .mobile-sidebar__search {
 }
