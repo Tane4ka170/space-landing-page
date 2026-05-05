@@ -88,19 +88,54 @@
   flex: 1;
   text-align: center;
 }
+
 .hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 100px;
+  background-color: #23234a88;
+  border: 1px solid #44446a88;
+  backdrop-filter: blur(4px);
+  margin-bottom: 2rem;
 }
+
 .hero__badge-icon {
+  color: #6d28d9;
+  font-size: 1.1rem;
 }
+
 .hero__badge-text {
 }
+
 .hero__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
+
 .hero__title-line {
+  background: linear-gradient(90deg, #fff 0%, #b3b9c9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
 .hero__title-hightlight {
+  background: linear-gradient(90deg, #6d28d9 0%, #38bdf8 100%);
 }
+
 .hero__subtitle {
+  color: #b3b9c9;
+  font-size: 1.2rem;
+  max-width: 32rem;
+  margin-bottom: 2.5rem;
+  margin-inline: auto;
+  line-height: 1.7;
 }
 .hero__actions {
 }
