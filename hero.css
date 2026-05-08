@@ -37,7 +37,7 @@
   z-index: 1;
 }
 
-.hero-orb {
+.hero__orb {
   position: absolute;
   width: 24rem;
   height: 24rem;
@@ -68,8 +68,6 @@
   }
 }
 
-.site-wrapper {
-}
 .hero__container {
   position: relative;
   z-index: 10;
@@ -95,7 +93,7 @@
   gap: 0.5rem;
   padding: 0.5rem 1.5rem;
   border-radius: 100px;
-  background-color: #23234a88;
+  background: #23234a88;
   border: 1px solid #44446a88;
   backdrop-filter: blur(4px);
   margin-bottom: 2rem;
@@ -107,6 +105,8 @@
 }
 
 .hero__badge-text {
+  color: #b3b9c9;
+  font-size: 1rem;
 }
 
 .hero__title {
@@ -125,8 +125,11 @@
   background-clip: text;
 }
 
-.hero__title-hightlight {
+.hero__title-highlight {
   background: linear-gradient(90deg, #6d28d9 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero__subtitle {
@@ -158,44 +161,58 @@
     transform 0.2s,
     box-shadow 0.2s;
   box-shadow: 0 2px 16px 0 #6d28d955;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .hero__button--primary {
   background: linear-gradient(90deg, #6d28d9 0%, #38bdf8 100%);
   color: #fff;
 }
+
 .hero__button--primary:hover {
   opacity: 0.9;
   transform: scale(1.05);
   box-shadow: 0 4px 32px 0 #6d28d988;
 }
 
-.hero__button--chevron {
-  font-size: 1.2rem;
-  margin-left: 0.5rem;
-  transition: transform 0.2s;
-}
-.hero__button--primary:hover .hero__button--chevron {
-  transform: translateY(0.25rem);
-}
-
 .hero__button--outline {
-  background-color: #23234a55;
+  background: #23234a55;
   border: 1px solid #44446a88;
-  color: #e6e7eb;
+  color: #e5e7eb;
   backdrop-filter: blur(4px);
 }
+
 .hero__button--outline:hover {
-  background-color: #23234a99;
+  background: #23234a99;
   transform: scale(1.05);
 }
 
+.hero__button-chevron {
+  font-size: 1.2em;
+  margin-left: 0.5em;
+  transition: transform 0.2s;
+}
+
+.hero__button--primary:hover .hero__button-chevron {
+  transform: translateX(0.25em);
+}
+
 .hero__visual {
-  position: inherit;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__visual-frame {
+  position: relative;
   width: 18.75rem;
   height: 25rem;
   animation: astronaut-float 5.5s ease-in-out infinite;
 }
+
 @keyframes astronaut-float {
   0%,
   100% {
@@ -205,8 +222,7 @@
     transform: translateY(-14px);
   }
 }
-.hero__visual-frame {
-}
+
 .hero__visual-glow {
   position: absolute;
   inset: 0;
@@ -234,8 +250,9 @@
   z-index: 2;
   -webkit-user-drag: none;
 }
+
 .hero__astronaut:hover {
-  transform: rotate(6deg) scale(1);
+  transform: rotate(6deg) scale(1.03);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -244,7 +261,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (min-width: 640px) {
   .hero__title {
     font-size: 3rem;
   }
