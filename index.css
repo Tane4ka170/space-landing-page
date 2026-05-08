@@ -8,8 +8,8 @@
 }
 
 :root {
-  --cursor-default: url("assets/icons/cursor-default.png") 20 8 auto;
-  --cursor-pointer: url("assets/icons/cursor-pointer.png") 20 8 pointer;
+  --cursor-default: url("assets/icons/cursor-default.png") 20 8, auto;
+  --cursor-pointer: url("assets/icons/cursor-pointer.png") 20 2, pointer;
 }
 
 html {
@@ -23,22 +23,22 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background-color: #0f1328;
+  background: #0f1328;
 }
 
 html::-webkit-scrollbar-thumb {
-  background-color: linear-gradient(180deg, #6d28d9 0%, #38bdf8 100%);
+  background: linear-gradient(180deg, #6d28d9 0%, #38bdf8 100%);
   border-radius: 100px;
   border: 2px solid #0f1328;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-  background-color: linear-gradient(180deg, #7c3aed 0%, #67e8f9 100%);
+  background: linear-gradient(180deg, #7c3aed 0%, #67e8f9 100%);
 }
 
 body {
   font-family: "Inter", Arial, sans-serif;
-  background-color: #050510;
+  background: #050510;
   color: #e5e7eb;
   cursor: var(--cursor-default);
 }
@@ -49,12 +49,16 @@ label,
 summary,
 select,
 input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
 [role="button"] {
-  cursor: var(--cursor-default);
+  cursor: var(--cursor-pointer);
 }
 
 .site-wrapper {
-  width: 1200px;
+  max-width: 1200px;
   width: 100%;
   margin-inline: auto;
   padding-inline: 1.75rem;
@@ -86,6 +90,15 @@ input[type="button"],
   color: #fff;
 }
 
+.mobile-sidebar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
 .site-brand__icon {
   width: 1.5rem;
   height: 1.5rem;
@@ -98,7 +111,7 @@ input[type="button"],
   height: 2.75rem;
   border: 1px solid #2f2f47;
   border-radius: 0.8rem;
-  background-color: #11111ccc;
+  background: #11111ccc;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -110,13 +123,8 @@ input[type="button"],
 .site-header__menu-toggle-line {
   width: 1.2rem;
   height: 2px;
-  background-color: #fff;
+  background: #fff;
   border-radius: 100px;
-}
-
-.site-header__nav,
-.site-header-actions {
-  display: none;
 }
 
 .site-header__menu {
@@ -133,14 +141,20 @@ input[type="button"],
   font-size: 1rem;
   transition: color 0.2s;
 }
+
 .site-header__link:hover {
   color: #fff;
 }
 
-.site-header-actions {
+.site-header__actions {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.site-header__nav,
+.site-header__actions {
+  display: none;
 }
 
 .site-header__search {
@@ -153,19 +167,21 @@ input[type="button"],
   padding: 0.6rem 1rem;
   border-radius: 3rem;
   border: 1px solid #22223b;
-  background-color: #181826;
+  background: #181826;
   box-shadow: inset 0 1px 0 #ffffff0d;
-  transform:
+  transition:
     width 0.3s ease,
     border-color 0.3s ease,
-    box-shadow 0.3s ease background-color 0.3s ease;
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
 }
+
 .site-header__search:focus-within {
   border-color: #38bdf8;
   box-shadow:
-    0 0 0 3px #38bdf82e,
+    0 0 0 3px rgba(56, 189, 248, 0.18),
     inset 0 1px 0 #ffffff0d;
-  background-color: #1d1d2d;
+  background: #1d1d2d;
   max-width: 17rem;
 }
 
@@ -179,12 +195,13 @@ input[type="button"],
   width: 100%;
   border: none;
   border-radius: 0;
-  background-color: transparent;
+  background: transparent;
   color: #fff;
   font-size: 0.9rem;
   outline: none;
   margin-left: 0;
 }
+
 .site-header__search-input::placeholder {
   color: #b3b9c9;
 }
@@ -204,6 +221,7 @@ input[type="button"],
     opacity 0.2s,
     transform 0.2s;
 }
+
 .site-header__cta:hover {
   opacity: 0.9;
   transform: scale(1.04);
@@ -212,10 +230,10 @@ input[type="button"],
 .mobile-sidebar__overlay {
   position: fixed;
   inset: 0;
-  background-color: #00000066;
+  background: #00000066;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.25s ease;
   z-index: 49;
 }
 
@@ -228,7 +246,7 @@ input[type="button"],
   flex-direction: column;
   gap: 1.25rem;
   padding: 1.25rem 1.75rem 2rem;
-  background-color: #000000cc;
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #2b2b44;
   transform: translateY(-100%);
@@ -243,21 +261,12 @@ input[type="button"],
   gap: 1rem;
 }
 
-.mobile-sidebar__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fff;
-}
-
 .mobile-sidebar__close {
   width: 2.25rem;
   height: 2.25rem;
   border: none;
   border-radius: 0.7rem;
-  background-color: transparent;
+  background: transparent;
   color: #fff;
   font-size: 2rem;
   line-height: 1;
@@ -269,12 +278,14 @@ input[type="button"],
   align-items: center;
   gap: 0.65rem;
   padding: 0.6rem 1rem;
+  border-radius: 3rem;
   border: 1px solid #31314f;
-  background-color: #11111dd9;
+  background: #11111dd9;
 }
+
 .mobile-sidebar__search:focus-within {
   border-color: #38bdf8;
-  box-shadow: 0 0 0 3px #38bdf82e;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
 
 .mobile-sidebar__search-icon {
@@ -286,23 +297,23 @@ input[type="button"],
 .mobile-sidebar__search-input {
   width: 100%;
   border: none;
-  background-color: transparent;
-  color-scheme: #fff;
+  background: transparent;
+  color: #fff;
   font-size: 0.95rem;
   outline: none;
 }
+
 .mobile-sidebar__search-input::placeholder {
   color: #8f8f8f;
 }
 
-.mobile-sidebar__nav {
-}
 .mobile-sidebar__menu {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .mobile-sidebar__link {
   border-radius: 0.5rem;
   display: block;
@@ -314,11 +325,13 @@ input[type="button"],
     color 0.2s,
     padding-left 0.2s;
 }
+
 .mobile-sidebar__link:hover {
   background-color: #ffffff0a;
   color: #fff;
   padding-left: 0.75rem;
 }
+
 .mobile-sidebar__cta {
   margin-top: auto;
   width: 100%;
@@ -335,9 +348,11 @@ input[type="button"],
 body.sidebar-open {
   overflow: hidden;
 }
+
 body.sidebar-open .mobile-sidebar {
   transform: translateY(0);
 }
+
 body.sidebar-open .mobile-sidebar__overlay {
   opacity: 1;
   pointer-events: auto;
@@ -347,6 +362,7 @@ body.sidebar-open .mobile-sidebar__overlay {
   .site-header__search {
     width: 16rem;
   }
+
   .site-header__search:focus-within {
     width: 22rem;
   }
@@ -358,7 +374,7 @@ body.sidebar-open .mobile-sidebar__overlay {
   }
 
   .site-header__nav,
-  .site-header-actions {
+  .site-header__actions {
     display: flex;
   }
 }
